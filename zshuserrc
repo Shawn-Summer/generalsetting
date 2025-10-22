@@ -24,6 +24,8 @@ alias vimconfig='vim ~/.config/nvim/'
 alias generalconfig='vim ~/.generalsetting/'
 alias cl="clear"
 
+## git 
+alias pushanyway='git push origin HEAD --force'			#push anyway
 gitinit() {
   git init
   cat > .gitignore << 'EOF'
