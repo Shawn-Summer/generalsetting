@@ -1,0 +1,122 @@
+
+alias ll="ls -lt"
+alias la="ls -lAt"
+# tmux
+alias tls='tmux ls'
+alias tkt='tmux kill-session -t'
+alias tat='tmux attach -t'
+alias tst='tmux switch -t'
+alias tnew='tmux new -s'
+alias tre='tmux rename-session'
+alias tconfig='vim ~/.tmux.conf'
+
+# conda env
+alias condals='conda env list'
+alias condakt='conda env remove -n'
+alias condaat='conda activate'
+alias condade='conda deactivate'
+alias condanew='conda create --name'
+alias condaconfig='vim ~/.condarc'
+
+alias zshconfig='vim ~/.zshrc'
+alias zshrestart='source ~/.zshrc' 
+alias vimconfig='vim ~/.config/nvim/'
+alias generalconfig='vim ~/.generalsetting/'
+alias cl="clear"
+
+gitinit() {
+  git init
+  cat > .gitignore << 'EOF'
+ # ============== 操作系统自动生成的文件 ==============
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.font-unix
+.fscklost+found
+.netrwhist
+.nfs*
+
+
+# ============== 编辑器/IDE 配置文件 ==============
+# 通用临时文件
+*.swp    # Vim 临时文件
+*.swo    # Vim 交换文件
+*.sublime-*  # Sublime Text
+.idea/   # IntelliJ 系列（IDEA、PyCharm 等）
+.vscode/ # VS Code（包含插件配置、工作区设置等）
+*.code-workspace # VS Code 工作区文件
+.project # Eclipse
+.classpath # Eclipse
+.c9/     # Cloud9 IDE
+*.launch # Eclipse 启动配置
+.settings/ # Eclipse 项目设置
+*.pbxuser # Xcode
+*.mode1v3 # Xcode
+*.mode2v3 # Xcode
+*.perspectivev3 # Xcode
+xcuserdata/ # Xcode
+*.xccheckout # Xcode
+*.moved-aside # Xcode
+DerivedData/ # Xcode
+*.hmap # Xcode
+*.ipa # Xcode 打包产物
+*.xcuserstate # Xcode
+
+
+# ============== 通用缓存、日志、临时文件 ==============
+# 缓存目录
+.cache/
+tmp/
+temp/
+logs/
+*.log
+*.bak    # 备份文件
+*.tmp    # 临时文件
+*.old    # 旧文件备份
+*.~      # 编辑器临时备份（如 Emacs）
+
+
+# ============== 敏感信息与环境配置 ==============
+.env     # 环境变量文件（通常包含密钥、密码等）
+.env.local
+.env.*.local
+*.pem    # 证书文件
+*.key    # 密钥文件
+*.secret
+config.local
+credentials.json
+
+
+# ============== 压缩包与安装包 ==============
+*.zip
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.rar
+*.7z
+*.iso
+*.dmg
+*.deb
+*.rpm
+
+
+# ============== 其他通用规则 ==============
+# 排除空目录标记（如需跟踪空目录，可保留 .gitkeep）
+!.gitkeep
+EOF
+}
+
