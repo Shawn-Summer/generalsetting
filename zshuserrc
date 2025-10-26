@@ -2,13 +2,21 @@
 alias ll="ls -lt"
 alias la="ls -lAt"
 # tmux
+alias tmx='tmux attach || tmux new'  # 连接最近会话，若无则新建
 alias tls='tmux ls'
-alias tkt='tmux kill-session -t'
 alias tat='tmux attach -t'
 alias tst='tmux switch -t'
 alias tnew='tmux new -s'
 alias tre='tmux rename-session'
 alias tconfig='vim ~/.tmux.conf'
+alias tkall='tmux kill-server'
+tkt() {
+  # 遍历所有传入的参数（每个参数都是一个会话名/ID）
+  for session in "$@"; do
+    # 逐个删除会话，-t 指定会话， 静默模式（不输出成功信息）
+    tmux kill-session -t "$session" 
+  done
+}
 
 # conda env
 alias condals='conda env list'
