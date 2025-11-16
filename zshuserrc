@@ -1,6 +1,9 @@
 
 alias ll="ls -lt"
 alias la="ls -lAt"
+
+# nvim
+(( ${+commands[nvim]} )) && alias vim='nvim'
 # tmux
 alias tmx='tmux attach || tmux new'  # 连接最近会话，若无则新建
 alias tls='tmux ls'
@@ -129,4 +132,6 @@ credentials.json
 !.gitkeep
 EOF
 }
+
+alias setproxy='export http_proxy="http://127.0.0.1:7890" && export https_proxy="http://127.0.0.1:7890"'
 
