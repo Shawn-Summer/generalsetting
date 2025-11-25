@@ -5,7 +5,7 @@ return {
     opts = {
       linters = {
         ["markdownlint-cli2"] = {
-          args = { "--config", vim.fn.expand("$HOME/.config/nvim/lua/plugins/.markdownlint-cli2.yaml"), "--" }, -- 代码质量检测
+          args = { "--config", vim.fn.expand("$XDG_CONFIG_HOME/nvim/lua/plugins/.markdownlint-cli2.yaml"), "--" }, -- 代码质量检测
         },
       },
     },
@@ -15,7 +15,7 @@ return {
     opts = {
       formatters = {
         ["markdownlint-cli2"] = {
-          args = { "--config", vim.fn.expand("$HOME/.config/nvim/lua/plugins/.markdownlint-cli2.yaml"), "--" }, -- formatter
+          args = { "--config", vim.fn.expand("$XDG_CONFIG_HOME/nvim/lua/plugins/.markdownlint-cli2.yaml"), "--" }, -- formatter
         },
       },
     },
