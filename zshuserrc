@@ -135,3 +135,7 @@ EOF
 
 alias setproxy='export http_proxy="http://127.0.0.1:7890" && export https_proxy="http://127.0.0.1:7890"'
 alias truecolor='chmod +x ~/.generalsetting/truecolor.sh && ~/.generalsetting/truecolor.sh'
+
+# envir
+#
+export XDG_CONFIG_HOME="$HOME/.generalsetting"
