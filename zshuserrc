@@ -31,7 +31,7 @@ alias condaconfig='vim ~/.condarc'
 
 alias zshconfig='vim ~/.zshrc'
 alias zshrestart='source ~/.zshrc' 
-alias vimconfig='vim ~/.config/nvim/'
+alias vimconfig='vim ~/.generalsetting/nvim/'
 alias generalconfig='vim ~/.generalsetting/'
 alias cl="clear"
 
