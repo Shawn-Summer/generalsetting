@@ -1,4 +1,9 @@
 
+# envir
+#
+export XDG_CONFIG_HOME="$HOME/.generalsetting"
+
+# alias and function
 alias ll="ls -lt"
 alias la="ls -lAt"
 
@@ -136,6 +141,10 @@ EOF
 alias setproxy='export http_proxy="http://127.0.0.1:7890" && export https_proxy="http://127.0.0.1:7890"'
 alias truecolor='chmod +x ~/.generalsetting/truecolor.sh && ~/.generalsetting/truecolor.sh'
 
-# envir
-#
-export XDG_CONFIG_HOME="$HOME/.generalsetting"
+nvim() {
+  # 先执行原始nvim命令（$@表示传递所有参数，如文件名、选项）
+  command nvim "$@"
+  # 退出nvim后，强制终端重置光标为闪烁竖线（echo命令通过ANSI转义序列控制光标）
+  echo -ne "\e[5 q"
+}
+
