@@ -1,0 +1,12 @@
+font-family = "Maple Mono NF CN Regular"
+font-style-bold="Maple Mono NF CN Bold"
+font-style-bold-italic = "Maple Mono NF CN Bold ItalicMaple"
+font-style-italic ="Maple Mono NF CN Italic"
+font-size=12
+theme = TokyoNight
+background-opacity=0.5
+background-blur = true
+macos-titlebar-style = tabs
+term = xterm-256color
+cursor-style = bar
+auto-update = off
