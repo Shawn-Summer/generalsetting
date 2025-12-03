@@ -39,7 +39,7 @@ alias zshrestart='source ~/.zshrc'
 alias vimconfig='vim ~/.generalsetting/nvim/'
 alias generalconfig='vim ~/.generalsetting/'
 alias cl="clear"
-
+alias icat="kitten icat"
 ## git 
 alias pushanyway='git push origin HEAD --force'			#push anyway
 gitinit() {
