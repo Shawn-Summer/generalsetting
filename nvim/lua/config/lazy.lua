@@ -15,7 +15,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 local lazy_config = {
   git = {
-    -- 网络节流控制
+    -- 网络节流控制 单位时间内的 Git 网络操作次数(这里是 5秒 2次)
     throttle = {
       enabled = true,
       rate = 2,
@@ -31,19 +31,33 @@ local lazy_config = {
     -- 冷却时间
     cooldown = 60,
   },
-  -- 并发控制
-  concurrency = nil,
+  -- 及时获取更新并通知
   checker = {
-    enabled = true,
+    enabled = false, -- 不自动插件更新
     concurrency = 1,
     frequency = 3600,
   },
-  -- 性能优化
-  performance = {
-    cache = {
-      enabled = true,
+  -- 纯lua包的管理
+  pkg = {
+    enabled = true,
+    cache = vim.fn.stdpath("state") .. "/lazy/pkg-cache.lua",
+    -- the first package source that is found for a plugin will be used.
+    sources = {
+      "lazy",
+      "rockspec", -- will only be used when rocks.enabled is true
+      "packspec",
     },
-    reset_packpath = true,
+  },
+  rocks = {
+    enabled = true,
+    root = vim.fn.stdpath("data") .. "/lazy-rocks",
+    server = "https://lumen-oss.github.io/rocks-binaries/",
+    -- server = "https://luarocks.org/manifests/neorocks/",
+    -- use hererocks to install luarocks?
+    -- set to `nil` to use hererocks when luarocks is not found
+    -- set to `true` to always use hererocks
+    -- set to `false` to always use luarocks
+    hererocks = nil,
   },
 }
 
@@ -59,10 +73,10 @@ require("lazy").setup({
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
     -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
-    lazy = false,
+    lazy = true,
     -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
     -- have outdated releases, which may break your Neovim install.
-    version = false, -- always use the latest git commit
+    version = "*", -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
