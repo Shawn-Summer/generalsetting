@@ -7,8 +7,9 @@ foo.*
 *.log
 data
 lazy-lock.json
+plugins/core.lua
 *.swp
 *.swo
 .session
 .undo
-lazyvim.json
+
