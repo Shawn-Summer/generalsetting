@@ -11,3 +11,4 @@ lazy-lock.json
 *.swo
 .session
 .undo
+lazyvim.json
