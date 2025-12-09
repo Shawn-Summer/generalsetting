@@ -3,6 +3,14 @@
 #
 export XDG_CONFIG_HOME="$HOME/.generalsetting"
 
+if [ "$SSH_IDENTITY" = "xxl" ]; then
+  echo "load environment variables"
+  export HOMEBREW_INSTALL_FROM_API=1
+  export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+  export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+  export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+  export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+fi
 # alias and function
 alias ll="ls -lt"
 alias la="ls -lAt"
@@ -140,11 +148,4 @@ EOF
 
 alias setproxy='export http_proxy="http://127.0.0.1:7890" && export https_proxy="http://127.0.0.1:7890"'
 alias truecolor='chmod +x ~/.generalsetting/truecolor.sh && ~/.generalsetting/truecolor.sh'
-
-nvim() {
-  # 先执行原始nvim命令（$@表示传递所有参数，如文件名、选项）
-  command nvim "$@"
-  # 退出nvim后，强制终端重置光标为闪烁竖线（echo命令通过ANSI转义序列控制光标）
-  echo -ne "\e[5 q"
-}
 
