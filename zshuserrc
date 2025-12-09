@@ -2,7 +2,7 @@
 # envir
 #
 export XDG_CONFIG_HOME="$HOME/.generalsetting"
-
+export LC_SSH_IDENTITY=xxl #用于ssh验证身份
 if [ "$SSH_IDENTITY" = "xxl" ]; then
   echo "load environment variables for xxl"
   export HOMEBREW_INSTALL_FROM_API=1
