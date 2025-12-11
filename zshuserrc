@@ -1,15 +1,19 @@
 
 # envir
 #
-export XDG_CONFIG_HOME="$HOME/.generalsetting"
 export LC_SSH_IDENTITY=xxl #用于ssh验证身份
+
+for file in $(find "$XDG_CONFIG_HOME/ultils" -type f -name "*.sh"); do
+  source "$file"
+done
+
 if [ "$SSH_IDENTITY" = "xxl" ]; then
-  echo "load environment variables for xxl"
   export HOMEBREW_INSTALL_FROM_API=1
   export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
   export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
   export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
   export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+  
 fi
 # alias and function
 alias ll="ls -lt"
@@ -42,10 +46,15 @@ alias condade='conda deactivate'
 alias condanew='conda create --name'
 alias condaconfig='vim ~/.condarc'
 
+# terminal config
+alias kittyconfig='vim $XDG_CONFIG_HOME/kitty/kitty.conf'
+alias alacrittyconfig='vim $XDG_CONFIG_HOME/alacritty/alacritty.toml'
+alias ghosttyconfig='vim $XDG_CONFIG_HOME/ghostty/config'
+
 alias zshconfig='vim ~/.zshrc'
 alias zshrestart='source ~/.zshrc' 
-alias vimconfig='vim ~/.generalsetting/nvim/'
-alias generalconfig='vim ~/.generalsetting/'
+alias vimconfig='vim $XDG_CONFIG_HOME/nvim/'
+alias xdgconfig='vim $XDG_CONFIG_HOME/'
 alias cl="clear"
 alias icat="kitten icat"
 ## git 
@@ -147,5 +156,9 @@ EOF
 }
 
 alias setproxy='export http_proxy="http://127.0.0.1:7890" && export https_proxy="http://127.0.0.1:7890"'
-alias truecolor='chmod +x ~/.generalsetting/truecolor.sh && ~/.generalsetting/truecolor.sh'
+alias truecolor='chmod +x $XDG_CONFIG_HOME/truecolor.sh && $XDG_CONFIG_HOME/truecolor.sh'
 
+## exit 
+if [ "$SSH_IDENTITY" = "xxl" ]; then
+  trap onExit EXIT
+fi
