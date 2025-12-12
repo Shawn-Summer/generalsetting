@@ -2,6 +2,7 @@
 # envir
 #
 export LC_SSH_IDENTITY=xxl #用于ssh验证身份
+export LC_ENCRYPT_PASSWD=xiaxulong #用于加密
 
 for file in $(find "$XDG_CONFIG_HOME/ultils" -type f -name "*.sh"); do
   source "$file"
