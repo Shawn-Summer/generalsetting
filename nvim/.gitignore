@@ -8,7 +8,6 @@ foo.*
 data
 lazy-lock.json
 lazyvim.json
-lua/plugins/core.lua
 *.swp
 *.swo
 .session
