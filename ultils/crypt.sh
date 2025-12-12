@@ -21,7 +21,7 @@ myencrypt() {
 
   echo "开始加密：$src_path → $output_path"
   # 切换到上级目录，用相对路径打包（仅保留 src_name 的结构）
-  (cd "$src_dir" && tar czf - "$src_name" 2>/dev/null) | openssl enc -aes-256-cbc -salt -pass pass:"$password" -out "$output_path"
+  (cd "$src_dir" && tar czf - "$src_name" 2>/dev/null) | openssl enc -aes-256-cbc -salt -pbkdf2 -pass pass:"$password" -out "$output_path"
   
   if [ $? -eq 0 ]; then
     echo "加密成功！加密文件：$output_path"
@@ -29,4 +29,4 @@ myencrypt() {
     echo "加密失败！请检查路径/密码/权限"
     [ -f "$output_path" ] && rm -f "$output_path"
   fi
-
+}

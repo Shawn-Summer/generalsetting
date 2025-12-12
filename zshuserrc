@@ -158,7 +158,3 @@ EOF
 alias setproxy='export http_proxy="http://127.0.0.1:7890" && export https_proxy="http://127.0.0.1:7890"'
 alias truecolor='chmod +x $XDG_CONFIG_HOME/truecolor.sh && $XDG_CONFIG_HOME/truecolor.sh'
 
-## exit 
-if [ "$SSH_IDENTITY" = "xxl" ]; then
-  trap onExit EXIT
-fi
