@@ -158,6 +158,8 @@ EOF
 alias setproxy='export http_proxy="http://127.0.0.1:7890" && export https_proxy="http://127.0.0.1:7890"'
 alias truecolor='chmod +x $XDG_CONFIG_HOME/truecolor.sh && $XDG_CONFIG_HOME/truecolor.sh'
 
-if [[ "$SSH_IDENTITY" = "xxl" ]] && [[ -z "$TMUX" ]]; then
-  trap mylogout EXIT
+parent_proc=$(ps -p $PPID -o comm=)
+
+if [[ "$SSH_IDENTITY" = "xxl" ]] && [[ "$parent_proc" == "sshd" ]]; then # 当且仅当 为 ssh 远程连接 且 身份为xxl 且 当前进程为顶级进程时执行
+  trap 'mylogout > "$XDG_CONFIG_HOME/logs/exit" 2>&1 ' EXIT
 fi
