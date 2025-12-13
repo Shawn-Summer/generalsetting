@@ -34,6 +34,7 @@ require("lazy").setup({
     -- have outdated releases, which may break your Neovim install.
     version = "*", -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
+    pin = true,
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
   checker = {
@@ -76,7 +77,7 @@ require("lazy").setup({
   },
   -- 及时获取更新并通知
   checker = {
-    enabled = false, -- 不自动插件更新
+    enabled = false, -- 不获得更新通知
     concurrency = 1,
     frequency = 3600,
   },
