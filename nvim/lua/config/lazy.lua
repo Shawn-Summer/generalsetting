@@ -21,6 +21,7 @@ local spec = {
   { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
   { import = "lazyvim.plugins.extras.lang.python" },
   { import = "lazyvim.plugins.extras.lang.markdown" },
+  { import = "lazyvim.plugins.extras.lang.tex" },
   { import = "lazyvim.plugins.extras.util.project" },
   { import = "lazyvim.plugins.extras.formatting.prettier" },
   -- 自定义插件导入
@@ -59,7 +60,6 @@ require("lazy").setup({
     -- have outdated releases, which may break your Neovim install.
     version = "*", -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
-    pin = true,
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
   checker = {
