@@ -14,18 +14,26 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local spec = {
+  -- LazyVim 核心插件
+  { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+  -- 原有额外导入
+  { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
+  { import = "lazyvim.plugins.extras.lang.python" },
+  { import = "lazyvim.plugins.extras.lang.markdown" },
+  -- 自定义插件导入
+  { import = "plugins" },
+  { import = "plugins/nvim-cmp" },
+  { import = "plugins/nvim-lspconfig" },
+}
+
+-- 2. 根据 vim.g.old_version 条件追加导入
+if vim.g.old_version == true then
+  table.insert(spec, { import = "old-version" }) -- 满足条件时添加
+end
+
 require("lazy").setup({
-  spec = {
-    -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" }, -- lazzyvim 自带插件
-    { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
-    { import = "lazyvim.plugins.extras.lang.python" },
-    { import = "lazyvim.plugins.extras.lang.markdown" },
-    -- import/override with your plugins
-    { import = "plugins" }, -- 从plugins文件夹内引入的配置
-    { import = "plugins/nvim-cmp" },
-    { import = "plugins/nvim-lspconfig" },
-  },
+  spec = spec,
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
     -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
