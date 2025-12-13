@@ -7,7 +7,7 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.opt.relativenumber = true -- use relativ number
 vim.opt_local.spell = false -- disable spell check
-vim.diagnostic.enable(false) 
+vim.diagnostic.enable(false)
 vim.g.autoformat = false -- disable autoformat 只使用 format_on_save
 ---lspconfig
 -- LSP Server to use for Python.
@@ -20,7 +20,7 @@ vim.g.lazyvim_python_ruff = "ruff"
 -- If no prettier config file is found, the formatter will not be used
 vim.g.lazyvim_prettier_needs_config = false
 
--- 全局开关：是否开启保存时自动格式化（默认开启）
+-- 全局开关：是否开启保存时自动格式化
 vim.g.format_on_save = false
 vim.api.nvim_create_user_command("FormatOnSaveToggle", function()
   vim.g.format_on_save = not vim.g.format_on_save
