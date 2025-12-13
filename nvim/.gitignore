@@ -12,5 +12,4 @@ lazyvim.json
 *.swo
 .session
 .undo
-lua/plugins/core.lua
 

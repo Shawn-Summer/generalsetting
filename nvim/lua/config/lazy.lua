@@ -21,15 +21,32 @@ local spec = {
   { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
   { import = "lazyvim.plugins.extras.lang.python" },
   { import = "lazyvim.plugins.extras.lang.markdown" },
+  { import = "lazyvim.plugins.extras.util.project" },
+  { import = "lazyvim.plugins.extras.formatting.prettier" },
   -- 自定义插件导入
   { import = "plugins" },
   { import = "plugins/nvim-cmp" },
   { import = "plugins/nvim-lspconfig" },
 }
 
+vim.g.old_version = (os.getenv("SSH_IDENTITY") == "xxl")
 -- 2. 根据 vim.g.old_version 条件追加导入
 if vim.g.old_version == true then
-  table.insert(spec, { import = "old-version" }) -- 满足条件时添加
+  spec = {
+   -- LazyVim 核心插件
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- 原有额外导入
+    { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
+    { import = "lazyvim.plugins.extras.lang.python" },
+    { import = "lazyvim.plugins.extras.lang.markdown" },
+    { import = "lazyvim.plugins.extras.util.project" },
+    -- 自定义插件导入
+    { import = "plugins" },
+    { import = "plugins/nvim-cmp" },
+    { import = "plugins/nvim-lspconfig" },
+    { import = "old_version" },
+  
+}
 end
 
 require("lazy").setup({
