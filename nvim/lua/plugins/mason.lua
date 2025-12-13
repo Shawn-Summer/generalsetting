@@ -1,6 +1,6 @@
 -- lua/config/mason.lua
 return {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = {
     -- 仅修改需要的字段，其他默认配置会自动合并
     registries = {
@@ -8,7 +8,8 @@ return {
     },
     github = {
       -- 替换 GitHub 下载链接为代理地址
-      download_url_template = "https://gh-proxy.org/https://github.com/%s/releases/download/%s/%s",
+      download_url_template = "https://github.com/%s/releases/download/%s/%s",
+      -- download_url_template = "https://gh-proxy.org/https://github.com/%s/releases/download/%s/%s",
     },
     pip = {
       upgrade_pip = false,  -- 开启 pip 升级
