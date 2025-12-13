@@ -4,6 +4,7 @@
 --
 -- support directly copy to clipboard by vim's y command. (actually lua code)
 vim.opt.clipboard = "unnamedplus"
+vim.g.old_version = (os.getenv("SSH_IDENTITY") == "xxl")
 
 vim.opt.relativenumber = true -- use relativ number
 vim.opt_local.spell = false -- disable spell check
