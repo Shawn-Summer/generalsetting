@@ -1,4 +1,0 @@
-\contentsline {section}{\numberline {1}引言}{2}{section.1}%
-\contentsline {section}{\numberline {2}数学公式测试}{2}{section.2}%
-\contentsline {section}{\numberline {3} TikZ 绘图测试}{3}{section.3}%
-\contentsline {section}{\numberline {4}参考文献测试}{3}{section.4}%
