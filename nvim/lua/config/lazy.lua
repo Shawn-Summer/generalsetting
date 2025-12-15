@@ -17,6 +17,8 @@ vim.opt.rtp:prepend(lazypath)
 local spec = {
   -- LazyVim 核心插件 共享(基础)插件只
   { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+  { import = "lazyvim.plugins.extras.editor.snacks_explorer" },
+  { import = "lazyvim.plugins.extras.editor.snacks_picker" },
   { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
   { import = "lazyvim.plugins.extras.lang.markdown" },
   { import = "basic" },
@@ -28,7 +30,6 @@ vim.g.old_version = (os.getenv("SSH_IDENTITY") == "xxl")
 -- 2. 根据 vim.g.old_version 条件追加导入
 if vim.g.old_version == true then
   table.insert(spec, { import = "lazyvim.plugins.extras.lang.python" })
-  table.insert(spec, { import = "lazyvim.plugins.extras.util.project" })
   table.insert(spec, { import = "old_version" })
 else
   table.insert(spec, { import = "lazyvim.plugins.extras.lang.python" })
@@ -39,8 +40,6 @@ else
   table.insert(spec, { import = "lazyvim.plugins.extras.lang.yaml" })
   table.insert(spec, { import = "lazyvim.plugins.extras.lang.toml" })
   table.insert(spec, { import = "lazyvim.plugins.extras.lang.docker" })
-  table.insert(spec, { import = "lazyvim.plugins.extras.lang.docker" })
-  table.insert(spec, { import = "lazyvim.plugins.extras.util.project" })
   table.insert(spec, { import = "lazyvim.plugins.extras.ui.smear-cursor"})
   table.insert(spec, { import = "lazyvim.plugins.extras.formatting.prettier" })
   table.insert(spec, { import = "lazyvim.plugins.extras.util.mini-hipatterns"})
