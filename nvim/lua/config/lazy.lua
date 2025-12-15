@@ -33,8 +33,17 @@ if vim.g.old_version == true then
 else
   table.insert(spec, { import = "lazyvim.plugins.extras.lang.python" })
   table.insert(spec, { import = "lazyvim.plugins.extras.lang.tex" })
+  table.insert(spec, { import = "lazyvim.plugins.extras.lang.git" })
+  table.insert(spec, { import = "lazyvim.plugins.extras.lang.clangd" })
+  table.insert(spec, { import = "lazyvim.plugins.extras.lang.json" })
+  table.insert(spec, { import = "lazyvim.plugins.extras.lang.yaml" })
+  table.insert(spec, { import = "lazyvim.plugins.extras.lang.toml" })
+  table.insert(spec, { import = "lazyvim.plugins.extras.lang.docker" })
+  table.insert(spec, { import = "lazyvim.plugins.extras.lang.docker" })
   table.insert(spec, { import = "lazyvim.plugins.extras.util.project" })
   table.insert(spec, { import = "lazyvim.plugins.extras.formatting.prettier" })
+  table.insert(spec, { import = "lazyvim.plugins.extras.util.mini-hipatterns"})
+  table.insert(spec, { import = "lazyvim.plugins.extras.util.startuptime"})
   table.insert(spec, { import = "plugins" })
 end
 
