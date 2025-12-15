@@ -41,6 +41,7 @@ else
   table.insert(spec, { import = "lazyvim.plugins.extras.lang.docker" })
   table.insert(spec, { import = "lazyvim.plugins.extras.lang.docker" })
   table.insert(spec, { import = "lazyvim.plugins.extras.util.project" })
+  table.insert(spec, { import = "lazyvim.plugins.extras.ui.smear-cursor"})
   table.insert(spec, { import = "lazyvim.plugins.extras.formatting.prettier" })
   table.insert(spec, { import = "lazyvim.plugins.extras.util.mini-hipatterns"})
   table.insert(spec, { import = "lazyvim.plugins.extras.util.startuptime"})
