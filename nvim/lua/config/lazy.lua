@@ -44,6 +44,7 @@ else
   table.insert(spec, { import = "lazyvim.plugins.extras.formatting.prettier" })
   table.insert(spec, { import = "lazyvim.plugins.extras.util.mini-hipatterns"})
   table.insert(spec, { import = "lazyvim.plugins.extras.util.startuptime"})
+  table.insert(spec, { import = "lazyvim.plugins.extras.vscode"})
   table.insert(spec, { import = "plugins" })
 end
 
