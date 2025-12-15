@@ -1,0 +1,7 @@
+commitTemplates:
+  - type: "feat"
+    description: "新功能"
+    template: "feat: {{description}}\n\n{{body}}"
+  - type: "fix"
+    description: "错误修复"
+    template: "fix: {{description}}\n\n{{body}}"
