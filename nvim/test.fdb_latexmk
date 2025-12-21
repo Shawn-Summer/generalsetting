@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1765790889.03981 "test.xdv" "test.pdf" "test" 1765790889.25416 0
-  "test.xdv" 1765790508.68191 10628 059a6f58391aef5c3de03b6d632a2d54 "xelatex"
+["xdvipdfmx"] 1765903842.28077 "test.xdv" "test.pdf" "test" 1765903842.48794 0
+  "test.xdv" 1765903842.25518 10576 2f75eeb3b60a3a315dd758d3eb492604 "xelatex"
   (generated)
   "test.pdf"
   (rewritten before read)
-["xelatex"] 1765790508.15536 "test.tex" "test.xdv" "test" 1765790889.25365 0
+["xelatex"] 1765903841.67453 "test.tex" "test.xdv" "test" 1765903842.48743 0
   "/System/Library/Fonts/Menlo.ttc" 1763819368 2156036 ec05dfca6821d85440da0899493002c3 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -82,8 +82,8 @@
   "/usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf" 1739380943 42148 61becc7c670cd061bb319c643c27fdd4 ""
   "/usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1741450550 5639796 b6822fbf027c6598cec2e241e0925725 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "test.aux" 1765790508.6815 756 d2d91f6a56178cfe76b980c185c47e32 "xelatex"
-  "test.tex" 1765790506.00894 2448 62588584237c6a35615c2ab8b947e1b6 ""
+  "test.aux" 1765903842.25448 756 d2d91f6a56178cfe76b980c185c47e32 "xelatex"
+  "test.tex" 1765903840.18878 2442 2f2a4c589f29b72c3b9cd64ac1879a3d ""
   (generated)
   "test.aux"
   "test.log"

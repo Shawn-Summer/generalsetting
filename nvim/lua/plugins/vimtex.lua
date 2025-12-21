@@ -8,7 +8,7 @@ return {
     -- 编译指令--
       -- 使用 latexmk 编译指令
     vim.g.vimtex_compiler_method = "latexmk"
-      -- 使用 xelatex 作为默认引擎 （对中文兼容好）
+      -- 使用 lualatex 作为默认引擎 （对中文兼容好）
     vim.g.vimtex_compiler_latexmk_engines = {
       ['_']                = '-xelatex' ,  -- 默认引擎直接设为 xelatex（中文优先）
       ['pdflatex']         = '-pdf',      -- 备用：纯英文文档可切换
