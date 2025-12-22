@@ -9,7 +9,18 @@ return {
   },
   -- 基础静态配置（只定义不变的部分）
   opts = {
+    workspaces = {
+      {
+        name = "personal",
+        path = "~/MyNotes/MyNotes",
+      },
+    },
     legacy_commands = false,
+    templates = {
+      folder = "templates",
+      date_format = "%Y-%m-%d-%a",
+      time_format = "%H:%M",
+    },
     statusline = {
       format = "{{backlinks}} backlinks  {{properties}} properties  {{words}} words  {{chars}} chars",
       enabled = false,
@@ -21,25 +32,17 @@ return {
       workdays_only = false,
       template = "Daily.md",
     },
-    workspaces = {
-      {
-        name = "personal",
-        path = "~/MyNotes/MyNotes",
-      },
-    },
-    attachments ={
+    attachments = {
       confirm_img_paste = false,
-    },
-    templates = {
-      folder = "templates",
-      date_format = "%Y-%m-%d-%a",
-      time_format = "%H:%M",
     },
     frontmatter = {
       enabled = false,
     },
     footer = {
       enabled = false,
+    },
+    ui = {
+      enable = false, -- 和 render-markdown conflicts
     },
   },
   config = function(_, opts)
