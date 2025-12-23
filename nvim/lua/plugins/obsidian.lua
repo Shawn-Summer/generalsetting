@@ -23,7 +23,7 @@ return {
     },
     statusline = {
       format = "{{backlinks}} backlinks  {{properties}} properties  {{words}} words  {{chars}} chars",
-      enabled = false,
+      enabled = true,
     },
 
     daily_notes = {

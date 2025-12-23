@@ -7,7 +7,7 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
--- osc52 从服务器到本地 
+-- osc52 从服务器到本地
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank()
@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- 保存是自动 formatting
+-- 保存时自动 formatting
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
   callback = function(args)
