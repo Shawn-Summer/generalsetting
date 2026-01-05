@@ -37,6 +37,9 @@ tkt() {
 }
 
 # conda env
+if command -v mamba &> /dev/null; then
+  alias conda='mamba'
+fi
 alias condals='conda env list'
 alias condakt='conda env remove -n'
 alias condaat='conda activate'
